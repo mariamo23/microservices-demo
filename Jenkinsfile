@@ -12,11 +12,11 @@ pipeline {
                 cleanWs()
             }
         }
-        stage('Git Checkout') {
-            steps {
-                git branch: 'dev', url: 'https://github.com/mariamo23/microservices-demo.git'
-            }
-        }
+       // stage('Git Checkout') {
+         //   steps {
+           //     git branch: 'dev', url: 'https://github.com/mariamo23/microservices-demo.git'
+          //  }
+       // }
         stage('sonarqube analysis') {
             steps {
                 withSonarQubeEnv('sonar-server') {
