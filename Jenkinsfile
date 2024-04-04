@@ -40,7 +40,7 @@ pipeline {
                 script{
                    // withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker'){
                   //sudo chmod 777 /var/run/docker.sock      
-                  dir('/var/lib/jenkins/workspace/project/src/adservice/') {
+                  dir('/var/lib/jenkins/workspace/Summary_project/src/adservice/') {
                                 sh ' docker build -t adservice .'
                                 sh ' docker tag adservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script{
               //      withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/cartservice/src/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/cartservice/src/') {
                                 sh ' docker build -t cartservice .'
                                 sh ' docker tag cartservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/cartservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/cartservice:latest'
@@ -68,7 +68,7 @@ pipeline {
             steps {
                 script{
                  //   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/checkoutservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/checkoutservice/') {
                                 sh ' docker build -t checkoutservice .'
                                 sh ' docker tag checkoutservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/checkoutservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/checkoutservice:latest'
@@ -82,7 +82,7 @@ pipeline {
             steps {
                 script{
              //       withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/currencyservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/currencyservice/') {
                                 sh ' docker build -t currencyservice .'
                                 sh ' docker tag currencyservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/currencyservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/currencyservice:latest'
@@ -96,7 +96,7 @@ pipeline {
             steps {
                 script{
                  //   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/emailservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/emailservice/') {
                                 sh ' docker build -t emailservice .'
                                 sh ' docker tag emailservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/emailservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/emailservice:latest'
@@ -110,7 +110,7 @@ pipeline {
             steps {
                 script{
                   //  withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/frontend/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/frontend/') {
                                 sh ' docker build -t frontend .'
                                 sh ' docker tag frontend:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/frontend:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/frontend:latest'
@@ -124,7 +124,7 @@ pipeline {
             steps {
                 script{
                  //   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/loadgenerator/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/loadgenerator/') {
                                 sh ' docker build -t loadgenerator .'
                                 sh ' docker tag loadgenerator:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/loadgenerator:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/loadgenerator:latest'
@@ -138,7 +138,7 @@ pipeline {
             steps {
                 script{
                  //   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/paymentservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/paymentservice/') {
                                 sh ' docker build -t paymentservice .'
                                 sh ' docker tag paymentservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/paymentservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/paymentservice:latest'
@@ -152,7 +152,7 @@ pipeline {
             steps {
                 script{
                   //  withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/productcatalogservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/productcatalogservice/') {
                                 sh ' docker build -t productcatalogservice .'
                                 sh ' docker tag productcatalogservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/productcatalogservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/productcatalogservice:latest'
@@ -166,7 +166,7 @@ pipeline {
             steps {
                 script{
                   //  withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/recommendationservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/recommendationservice/') {
                                 sh ' docker build -t recommendationservice .'
                                 sh ' docker tag recommendationservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/recommendationservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/recommendationservice:latest'
@@ -180,7 +180,7 @@ pipeline {
             steps {
                 script{
                    // withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        dir('/var/lib/jenkins/workspace/project/src/shippingservice/') {
+                        dir('/var/lib/jenkins/workspace/Summary_project/src/shippingservice/') {
                                 sh ' docker build -t shippingservice .'
                                 sh ' docker tag shippingservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/shippingservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/shippingservice:latest'
