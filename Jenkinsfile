@@ -191,7 +191,7 @@ pipeline {
         }
         stage('release') {
             steps {
-                withKubeConfig(caCertificate: '', clusterName: 'ekscluster', contextName: '', credentialsId: 'k8s-cred', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://4B7C7D7D236F9796E03CE80F4059DF74.sk1.ca-central-1.eks.amazonaws.com') {
+                withKubeConfig(caCertificate: '', clusterName: 'ekscluster', contextName: '', credentialsId: 'k8s_cred', namespace: '', restrictKubeConfigAccess: false, serverUrl: 'https://4B7C7D7D236F9796E03CE80F4059DF74.sk1.ca-central-1.eks.amazonaws.com') {
     
                        sh 'kubectl apply -f release/kubernetes-manifests.yaml'
                         sh 'kubectl get pods'
