@@ -7,16 +7,16 @@ pipeline {
     }
 
     stages {
-        stage('clean workspace'){
+       /* stage('clean workspace'){
             steps{
                 cleanWs()
             }
+        }*/
+        stage('Git Checkout') {
+            steps {
+                git branch: 'dev', url: 'https://github.com/mariamo23/microservices-demo.git'
+            }
         }
-       // stage('Git Checkout') {
-         //   steps {
-           //     git branch: 'dev', url: 'https://github.com/mariamo23/microservices-demo.git'
-          //  }
-       // }
         stage('sonarqube analysis') {
             steps {
                 withSonarQubeEnv('sonar-server') {
@@ -38,10 +38,10 @@ pipeline {
         stage('adservice') {
             steps {
                 script{
-                   // withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker'){
+                  // withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker'){
                   //sudo chmod 777 /var/run/docker.sock      
-                  dir('/var/lib/jenkins/workspace/Summary_project/src/src/adservice/') {
-                                sh ' docker build -t adservice .'
+                  dir('/var/lib/jenkins/workspace/Summary_project/src/adservice/') {
+                                sh ' docker buildx build -t adservice .'
                                 sh ' docker tag adservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
                                 sh ' docker rmi 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
@@ -55,7 +55,7 @@ pipeline {
                 script{
               //      withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Summary_project/src/cartservice/src/') {
-                                sh ' docker build -t cartservice .'
+                                sh ' docker buildx build -t cartservice .'
                                 sh ' docker tag cartservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/cartservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/cartservice:latest'
                                 sh ' docker rmi 654654207831.dkr.ecr.ca-central-1.amazonaws.com/cartservice:latest'
@@ -69,7 +69,7 @@ pipeline {
                 script{
                  //   withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
                         dir('/var/lib/jenkins/workspace/Summary_project/src/checkoutservice/') {
-                                sh ' docker build -t checkoutservice .'
+                                sh ' docker buildx build -t checkoutservice .'
                                 sh ' docker tag checkoutservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/checkoutservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/checkoutservice:latest'
                                 sh ' docker rmi 654654207831.dkr.ecr.ca-central-1.amazonaws.com/checkoutservice:latest'
