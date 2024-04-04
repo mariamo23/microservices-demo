@@ -40,7 +40,7 @@ pipeline {
                 script{
                    // withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker'){
                   //sudo chmod 777 /var/run/docker.sock      
-                  dir('/var/lib/jenkins/workspace/Summary_project/src/adservice/') {
+                  dir('/src/adservice/') {
                                 sh ' docker build -t adservice .'
                                 sh ' docker tag adservice:latest 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
                                 sh ' docker push 654654207831.dkr.ecr.ca-central-1.amazonaws.com/adservice:latest'
